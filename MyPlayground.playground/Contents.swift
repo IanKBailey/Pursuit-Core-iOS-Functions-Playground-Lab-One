@@ -4,8 +4,13 @@ import UIKit
 
 // Write a function named double(_:) that takes in a Double and returns that number times two
 
-// Your function here
+func double(input: Double) -> Double {
+  let output = (input * 2)
+    return output
+}
 
+
+print(double(input: 4.0))
 
 let testCasesOne: [(Double, Double)] = [
     (input: 3.0, expectedOutput: 6.0),
@@ -14,10 +19,10 @@ let testCasesOne: [(Double, Double)] = [
     (input: 99, expectedOutput: 198)
 ]
 
-//for (input, expectedOutput) in testCasesOne {
-//    let output = double(input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesOne {
+    let output = double(input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
 
 
 
