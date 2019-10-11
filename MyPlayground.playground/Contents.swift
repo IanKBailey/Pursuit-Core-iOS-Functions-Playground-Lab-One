@@ -10,7 +10,7 @@ func double(input: Double) -> Double {
 }
 
 
-print(double(input: 4.0))
+
 
 let testCasesOne: [(Double, Double)] = [
     (input: 3.0, expectedOutput: 6.0),
@@ -19,10 +19,10 @@ let testCasesOne: [(Double, Double)] = [
     (input: 99, expectedOutput: 198)
 ]
 
-for (input, expectedOutput) in testCasesOne {
-    let output = double(input)
-    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-}
+//for (input, expectedOutput) in testCasesOne {
+//    let output = Double(input)
+//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+//}
 
 
 
@@ -30,37 +30,49 @@ for (input, expectedOutput) in testCasesOne {
 
 // Write a function named smallest(of:and:) that takes in two Doubles and returns the smaller number
 
-// Your function here
+func smallest(of: Double, and: Double ) -> Double {
+    if of < and {
+        return of
+    } else {
+        return and
+    }
+
+}
+
 
 let testCasesTwo: [(Double, Double, Double)] = [
     (inputOne: 8.0, inputTwo: 3.0, expectedOutput: 3.0),
     (inputOne: 0, inputTwo: 0, expectedOutput: 0),
     (inputOne: -5, inputTwo: -3, expectedOutput: -5),
-    (inputOne: 2.3, inputTwo: 2.03, expectedOutput: 2.03)
+    (inputOne: 2.3, inputTwo: 2.03, expectedOutput: 2.03),
 ]
 
-//for (inputOne, inputTwo, expectedOutput) in testCasesTwo {
-//    let output = smallest(of: inputOne, and: inputTwo)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo) but got \(output)")
-//}
+for (inputOne, inputTwo, expectedOutput) in testCasesTwo {
+    let output = smallest(of: inputOne, and: inputTwo)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo) but got \(output)")
+}
 
 // Question Three
 
 // Write a function named smallestValue(in:) that takes in an array of Doubles and returns the smallest Double
 
-// Your function here
+func smallestValue (in arr: [Double]) -> Double {
+   return arr.sorted {$0 < $1}[0]
+            
+    }
 
 let testCasesThree: [([Double], Double)] = [
     (input: [1.0,2,3,4,5,5], expectedOutput: 1.0),
     (input: [6,5,4,3,2,1], expectedOutput: 1),
     (input: [0,0,0,0,0,0,0,0,0,0], expectedOutput: 0),
     (input: [-4,-59,-348,-34,-4], expectedOutput: -348),
+    
 ]
 
-//for (input, expectedOutput) in testCasesThree {
-//    let output = smallestValue(in: input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesThree {
+    let output = smallestValue(in: input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
 
 
 // Question Four
